@@ -14,23 +14,36 @@ export class FarmaciasService {
 
   create(createFarmaciaDto: CreateFarmaciaDto) {
     const farmacia = new Farmacia(createFarmaciaDto);
-
     return this.farmaciaRepository.save(farmacia);
   }
 
   findAll() {
-    return `This action returns all farmacias`;
+    return this.farmaciaRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} farmacia`;
+    return this.farmaciaRepository.findOneByOrFail({ id: id });
   }
 
-  update(id: number, updateFarmaciaDto: UpdateFarmaciaDto) {
-    return `This action updates a #${id} farmacia`;
+  async update(id: number, updateFarmaciaDto: UpdateFarmaciaDto) {
+    const farmacia = await this.farmaciaRepository.findOneByOrFail({ id: id });
+
+    updateFarmaciaDto.logradouro &&
+      (farmacia.logradouro = updateFarmaciaDto.logradouro);
+
+    updateFarmaciaDto.numero && (farmacia.numero = updateFarmaciaDto.numero);
+
+    updateFarmaciaDto.bairro && (farmacia.bairro = updateFarmaciaDto.bairro);
+
+    updateFarmaciaDto.cidade && (farmacia.cidade = updateFarmaciaDto.cidade);
+
+    updateFarmaciaDto.estado && (farmacia.estado = updateFarmaciaDto.estado);
+
+    return this.farmaciaRepository.save(farmacia);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} farmacia`;
+    this.farmaciaRepository.delete({ id: id });
+    return `Farmacia com o id ${id} foi deletada com sucesso!`;
   }
 }
