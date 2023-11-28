@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { FarmaciasService } from '../farmacias.service';
-import { FarmaciasWithUseCaseController } from './farmacias-with-use-case.controller';
+import { FarmaciasWithUseCaseController } from './farmacias.controller';
 
 describe('FarmaciasWithUseCaseController', () => {
   let controller: FarmaciasWithUseCaseController;

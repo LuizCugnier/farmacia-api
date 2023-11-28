@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Farmaceutico } from 'src/farmaceuticos/entities/farmaceutico.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Farmacia {
@@ -19,6 +20,9 @@ export class Farmacia {
 
   @Column()
   estado: string;
+
+  @OneToMany(() => Farmaceutico, (farmaceutico) => farmaceutico.farmacia)
+  farmaceuticos: Farmaceutico[];
 
   constructor(props: {
     id: number;

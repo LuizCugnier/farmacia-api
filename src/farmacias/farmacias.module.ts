@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Farmacia } from './entities/farmacia.entity';
-import { FarmaciasWithUseCaseController } from './controller/farmacias-with-use-case.controller';
+import { FarmaciasWithUseCaseController } from './controller/farmacias.controller';
 import { CreateFarmaciaUseCase } from './use-cases/create-farmacia.use-case';
 import { FindAllFarmaciasUseCase } from './use-cases/find-all-farmacias.use-case';
 import { FindByIdFarmaciaUseCase } from './use-cases/find-by-id.farmacia.use-case';
