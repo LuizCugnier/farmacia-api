@@ -3,9 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { FarmaciasModule } from './farmacias/farmacias.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Farmacia } from './farmacias/entities/farmacia.entity';
 import { ConfigModule } from '@nestjs/config';
 import { FarmaceuticosModule } from './farmaceuticos/farmaceuticos.module';
+import { PedidosModule } from './pedidos/pedidos.module';
 
 @Module({
   imports: [
@@ -13,7 +13,7 @@ import { FarmaceuticosModule } from './farmaceuticos/farmaceuticos.module';
       envFilePath: ['.env'],
     }),
     TypeOrmModule.forRoot({
-      type: process.env.DB_TYPE as 'postgres',
+      type: 'postgres',
       port: Number(process.env.DB_PORT),
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
@@ -23,6 +23,7 @@ import { FarmaceuticosModule } from './farmaceuticos/farmaceuticos.module';
     }),
     FarmaciasModule,
     FarmaceuticosModule,
+    PedidosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

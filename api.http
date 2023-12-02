@@ -1,0 +1,12 @@
+#FARMACIA
+GET http://localhost:3000/farmacias
+
+
+GET http://localhost:3000/farmaceuticos
+
+###
+GET http://localhost:3000/farmaceuticos/1 
+
+###
+POST  http://localhost:3000/farmaceuticos/
+
