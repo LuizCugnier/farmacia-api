@@ -1,11 +1,11 @@
 export class CreateFarmaceuticoDto {
-    crf: number;
+  crf: number;
 
-    nome: string;
+  nome: string;
 
-    data_nascimento: Date;
+  data_nascimento: Date;
 
-    carg_horaria: number;
+  carg_horaria: number;
 
-    farmaciaId: number;
+  farmaciaId: number;
 }

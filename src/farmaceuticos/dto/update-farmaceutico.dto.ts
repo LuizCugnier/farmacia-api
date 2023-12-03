@@ -1,4 +1,15 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { CreateFarmaceuticoDto } from './create-farmaceutico.dto';
 
-export class UpdateFarmaceuticoDto extends PartialType(CreateFarmaceuticoDto) {}
+class _UpdateFarmaceuticoDto {
+  crf: number;
+
+  nome: string;
+
+  data_nascimento: Date;
+
+  carg_horaria: number;
+}
+
+export class UpdateFarmaceuticoDto extends PartialType(
+  _UpdateFarmaceuticoDto,
+) {}
