@@ -1,7 +1,7 @@
 
 # API Farmácia
 
-API para o funcionamento de uma aplicação de entregas para famácias, feita utilizando o framework NEST.js
+API RESTful utilizando o framework NEST.js
 
 
 
@@ -13,4 +13,5 @@ API para o funcionamento de uma aplicação de entregas para famácias, feita ut
 ## Autores
 
 - [@Gutocugnier](https://www.github.com/LuizCugnier)
+- [@LucasBorba1 ](https://github.com/LucasBorba1)
 
