@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Entregador } from 'src/clientes/entities/entregador.entity';
+import { Entregador } from 'src/entregadores/entities/entregador.entity';
 import { EntregadoresController } from './controller/entregadores.controller';
 import { CreateEntregador } from './use-case/create-entregador';
 import { FindAllEntregadores } from './use-case/find-all-entregadores';
