@@ -21,6 +21,7 @@ import { EntregadoresModule } from './entregadores/entregadores.module';
       database: process.env.DB_DATABASE,
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
+      migrations: ['dist/migrations/*{.ts,.js}'],
     }),
     FarmaciasModule,
     FarmaceuticosModule,
