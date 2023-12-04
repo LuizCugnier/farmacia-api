@@ -26,6 +26,8 @@ export class Pedido {
   @Column()
   estado: string;
 
+  
+
   constructor(props: {
     id: number;
     logradouro: string;
