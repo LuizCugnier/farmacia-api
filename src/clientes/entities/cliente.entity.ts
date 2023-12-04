@@ -1,11 +1,9 @@
 import {
   Column,
   Entity,
-  OneToMany,
   PrimaryGeneratedColumn,
   Unique,
 } from 'typeorm';
-import { Telefone } from './cliente-telefone.entity';
 
 @Entity()
 @Unique(['cpf'])
@@ -37,8 +35,8 @@ export class Cliente {
   @Column()
   estado: string;
 
-  @OneToMany(() => Telefone, (telefone) => telefone.cliente)
-  telefones: Telefone[];
+  @Column('simple-array', { nullable: true })
+  telefones?: string[];
 
   constructor(props: {
     nome: string;
@@ -49,7 +47,7 @@ export class Cliente {
     bairro: string;
     cidade: string;
     estado: string;
-    telefones: Telefone[];
+    telefones?: string[];
   }) {
     Object.assign(this, props);
   }

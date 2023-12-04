@@ -1,6 +1,6 @@
-import { Telefone } from '../entities/cliente-telefone.entity';
-
 export class CreateClienteDto {
+  id: number;
+
   nome: string;
 
   idade: number;
@@ -17,5 +17,5 @@ export class CreateClienteDto {
 
   estado: string;
 
-  telefones: Telefone[];
+  telefones?: string[];
 }
