@@ -5,6 +5,7 @@ import { FarmaciasModule } from './farmacias/farmacias.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { FarmaceuticosModule } from './farmaceuticos/farmaceuticos.module';
+import { ClientesModule } from './clientes/clientes.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { FarmaceuticosModule } from './farmaceuticos/farmaceuticos.module';
     }),
     FarmaciasModule,
     FarmaceuticosModule,
+    ClientesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
