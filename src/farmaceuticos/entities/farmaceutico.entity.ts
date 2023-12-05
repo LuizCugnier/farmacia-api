@@ -1,7 +1,14 @@
 import { Farmacia } from 'src/farmacias/entities/farmacia.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  Unique,
+} from 'typeorm';
 
 @Entity()
+@Unique(['crf'])
 export class Farmaceutico {
   @PrimaryGeneratedColumn()
   id: number;

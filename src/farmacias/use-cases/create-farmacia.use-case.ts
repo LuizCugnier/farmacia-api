@@ -20,12 +20,12 @@ export class CreateFarmaciaUseCase {
       console.error('Erro ao salvar farmácia:', error);
 
       // Tratar o erro de chave única violada de forma mais abrangente
-      if (
-        error instanceof QueryFailedError &&
-        error.message.includes('duplicate key value violates unique constraint')
-      ) {
-        throw new Error('Farmácia já cadastrada!');
-      }
+      // if (
+      //   // error instanceof QueryFailedError &&
+      //   // error.message.includes('duplicate key value violates unique constraint')
+      // ) {
+      // }
+      throw new Error('Farmácia já cadastrada!');
     }
   }
 }

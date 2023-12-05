@@ -11,12 +11,16 @@ import { CreateFarmaceuticoDto } from '../dto/create-farmaceutico.dto';
 import { UpdateFarmaceuticoDto } from '../dto/update-farmaceutico.dto';
 import { CreateFarmaceutico } from '../use-cases/create-farmaceutico';
 import { FindAllFarmaceuticos } from '../use-cases/find-all-farmaceuticos';
+import { DeleteFarmaceutico } from '../use-cases/delete-farmaceuticos';
+import { UpdateInfoFarmaceutico } from '../use-cases/update-info-farmaceuticos';
 
 @Controller('farmaceuticos')
 export class FarmaceuticosController {
   constructor(
     private readonly createFarmaceutico: CreateFarmaceutico,
     private readonly findAllFarmaceuticos: FindAllFarmaceuticos,
+    private readonly removeFarmaceutico: DeleteFarmaceutico,
+    private readonly updateFarmaceutico: UpdateInfoFarmaceutico,
   ) {}
 
   @Post()
@@ -39,11 +43,11 @@ export class FarmaceuticosController {
     @Param('id') id: string,
     @Body() updateFarmaceuticoDto: UpdateFarmaceuticoDto,
   ) {
-    return;
+    return this.updateFarmaceutico.execute(+id, updateFarmaceuticoDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return;
+    return this.removeFarmaceutico.execute(+id);
   }
 }
