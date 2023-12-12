@@ -1,4 +1,13 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Cliente } from 'src/clientes/entities/cliente.entity';
+import { Entregador } from 'src/entregadores/entities/entregador.entity';
+import { Farmaceutico } from 'src/farmaceuticos/entities/farmaceutico.entity';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class Pedido {
@@ -26,7 +35,14 @@ export class Pedido {
   @Column()
   estado: string;
 
-  
+  @ManyToOne(() => Farmaceutico, (farmaceutico) => farmaceutico.pedidos)
+  farmaceutico: Farmaceutico;
+
+  @ManyToOne(() => Cliente, (cliente) => cliente.pedidos)
+  cliente: Cliente;
+
+  @ManyToOne(() => Entregador, (entregador) => entregador.pedidos)
+  entregador: Entregador;
 
   constructor(props: {
     id: number;
