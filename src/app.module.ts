@@ -7,6 +7,8 @@ import { ConfigModule } from '@nestjs/config';
 import { FarmaceuticosModule } from './farmaceuticos/farmaceuticos.module';
 import { ClientesModule } from './clientes/clientes.module';
 import { EntregadoresModule } from './entregadores/entregadores.module';
+import { RemediosModule } from './remedios/remedios.module';
+import { PedidosModule } from './pedidos/pedidos.module';
 
 @Module({
   imports: [
@@ -26,6 +28,8 @@ import { EntregadoresModule } from './entregadores/entregadores.module';
     FarmaceuticosModule,
     ClientesModule,
     EntregadoresModule,
+    RemediosModule,
+    PedidosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
