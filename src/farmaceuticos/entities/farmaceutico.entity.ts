@@ -1,8 +1,11 @@
 import { Farmacia } from 'src/farmacias/entities/farmacia.entity';
+import { Pedido } from 'src/pedidos/entities/pedido.entity';
 import {
   Column,
   Entity,
+  JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   Unique,
 } from 'typeorm';
@@ -27,6 +30,9 @@ export class Farmaceutico {
 
   @ManyToOne(() => Farmacia, (farmacia) => farmacia.farmaceuticos)
   farmacia: Farmacia;
+
+  @OneToMany(() => Pedido, (pedido) => pedido.farmaceutico)
+  pedidos: Pedido[];
 
   constructor(props: {
     crf: number;

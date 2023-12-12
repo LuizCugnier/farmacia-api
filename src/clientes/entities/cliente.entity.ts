@@ -1,6 +1,8 @@
+import { Pedido } from 'src/pedidos/entities/pedido.entity';
 import {
   Column,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   Unique,
 } from 'typeorm';
@@ -37,6 +39,9 @@ export class Cliente {
 
   @Column('simple-array', { nullable: true })
   telefones?: string[];
+
+  @OneToMany(() => Pedido, (pedido) => pedido.cliente)
+  pedidos: Pedido[];
 
   constructor(props: {
     nome: string;
