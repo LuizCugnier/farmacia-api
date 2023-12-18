@@ -1,6 +1,7 @@
 import { Cliente } from 'src/clientes/entities/cliente.entity';
 import { Entregador } from 'src/entregadores/entities/entregador.entity';
 import { Farmaceutico } from 'src/farmaceuticos/entities/farmaceutico.entity';
+import { Remedio } from 'src/remedios/entities/remedio.entity';
 import {
   Column,
   Entity,
@@ -43,6 +44,9 @@ export class Pedido {
 
   @ManyToOne(() => Entregador, (entregador) => entregador.pedidos)
   entregador: Entregador;
+
+  @OneToMany(() => Remedio, (remedio) => remedio.pedido)
+  remedios: Remedio[];
 
   constructor(props: {
     id: number;
