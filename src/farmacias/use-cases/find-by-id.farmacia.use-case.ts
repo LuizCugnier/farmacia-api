@@ -12,6 +12,6 @@ export class FindByIdFarmaciaUseCase {
   ) {}
 
   execute(id: number) {
-    return this.farmaciaRepository.findOneByOrFail({ id: id });
+    return this.farmaciaRepository.findOneByOrFail({id: id});
   }
 }
