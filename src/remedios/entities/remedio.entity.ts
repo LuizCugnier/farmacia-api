@@ -35,4 +35,17 @@ export class Remedio {
 
   @ManyToOne(() => Pedido, (pedido) => pedido.remedios)
   pedido: Pedido;
+
+  constructor(props: {
+    nome: string;
+    lote: number;
+    validade: string;
+    fabricante: string;
+    quantidade: number;
+    preco: number;
+    generico: boolean;
+    pedido?: Pedido;
+  }) {
+    Object.assign(this, props);
+  }
 }
