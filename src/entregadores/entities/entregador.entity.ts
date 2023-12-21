@@ -1,7 +1,8 @@
 import { Pedido } from 'src/pedidos/entities/pedido.entity';
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn, Unique } from 'typeorm';
 
 @Entity()
+@Unique(['cnh'])
 export class Entregador {
   @PrimaryGeneratedColumn()
   id: number;
@@ -10,7 +11,7 @@ export class Entregador {
   nome: string;
 
   @Column()
-  idade: number;
+  idade: string;
 
   @Column()
   cnh: string;
@@ -18,7 +19,7 @@ export class Entregador {
   @OneToMany(()=> Pedido, (pedido) => pedido.entregador)
   pedidos: Pedido[];
 
-  constructor(props: { nome: string; idade: number; cnh: string }) {
+  constructor(props: { nome: string; idade: string; cnh: string }) {
     Object.assign(this, props);
   }
 }
