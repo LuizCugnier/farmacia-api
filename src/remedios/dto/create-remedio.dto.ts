@@ -1,17 +1,15 @@
 export class CreateRemedioDto {
-    nome: string;
+  nome: string;
 
-    lote: number;
+  lote: number;
 
-    validade: string;
+  validade: string;
 
-    fabricante: string;
+  fabricante: string;
 
-    quantidade: number;
+  quantidade: number;
 
-    preco: number;
+  preco: number;
 
-    generico: boolean;
-
-    pedidoId?: number;
+  generico: boolean;
 }
