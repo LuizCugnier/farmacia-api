@@ -41,9 +41,9 @@ export class FarmaceuticosController {
   @Patch(':id')
   update(
     @Param('id') id: string,
-    @Body() updateFarmaceuticoDto: UpdateFarmaceuticoDto,
+    @Body() input: UpdateFarmaceuticoDto,
   ) {
-    return this.updateFarmaceutico.execute(+id, updateFarmaceuticoDto);
+    return this.updateFarmaceutico.execute(+id, input);
   }
 
   @Delete(':id')
