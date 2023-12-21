@@ -1,4 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Farmaceutico } from '../entities/farmaceutico.entity';
 import { QueryFailedError, Repository } from 'typeorm';
@@ -22,8 +26,12 @@ export class CreateFarmaceutico {
         error instanceof QueryFailedError &&
         error.message.includes('duplicate key value violates unique constraint')
       ) {
-        throw new Error('Farmacêutico já cadastrado!');
+        throw new ConflictException('Farmacêutico já cadastrado!');
       }
+
+      throw new InternalServerErrorException(
+        'Erro interno ao processar a solicitação.',
+      );
     }
   }
 }

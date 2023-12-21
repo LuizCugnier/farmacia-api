@@ -17,7 +17,7 @@ export class Farmaceutico {
   id: number;
 
   @Column()
-  crf: number;
+  crf: string;
 
   @Column()
   nome: string;
@@ -35,7 +35,7 @@ export class Farmaceutico {
   pedidos: Pedido[];
 
   constructor(props: {
-    crf: number;
+    crf: string;
     nome: string;
     data_nascimento: Date;
     carg_horaria: number;
