@@ -17,10 +17,10 @@ export class Cliente {
   nome: string;
 
   @Column()
-  idade: number;
+  idade: string;
 
-  @Column({ type: 'bigint' })
-  cpf: number;
+  @Column()
+  cpf: string;
 
   @Column()
   logradouro: string;
@@ -45,8 +45,8 @@ export class Cliente {
 
   constructor(props: {
     nome: string;
-    idade: number;
-    cpf: number;
+    idade: string;
+    cpf: string;
     logradouro: string;
     numero: number;
     bairro: string;

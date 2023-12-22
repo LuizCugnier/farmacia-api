@@ -3,9 +3,9 @@ import { PartialType } from '@nestjs/mapped-types';
 class _UpdateClienteDto {
   nome: string;
 
-  idade: number;    
+  idade: string;    
 
-  cpf: number;
+  cpf: string;
 
   logradouro: string;
 
